@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
@@ -13,35 +13,67 @@
 
 </head>
 <body>
+  <main>
+    <form action="" method="post" id="contact-form">
 
-  Contact Us
+      <h1>Contact Us</h1>
+      
+      <fieldset>
+        <legend>Personal Information</legend>
+        <div class="form-group">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" name="first-name" autocomplete="first-name" required>
+          <span class="error-message">This field is required</span>
+        </div>
 
-  First Name
-  This field is required
+        <div class="form-group">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" name="last-name" autocomplete="last-name" required>
+          <span class="error-message">This field is required</span>
+        </div>
 
-  Last Name
-  This field is required
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+          <span class="error-message">Please enter a valid email address</span>
+        </div>
+      </fieldset>
 
-  Email Address
-  Please enter a valid email address
-  This field is required
+      <fieldset>
+        <legend>Your message</legend>
+        <div class="form-group">
+          <label for="query-type">Query Type</label>
+          <select id="query-type" name="query-type" required>
+            <option value="">Please select a query type</option>
+            <option value="general-enquiry">General Enquiry</option>
+            <option value="support-request">Support Request</option>
+          </select>
+          <span class="error-message">Please select a query type</span>
+        </div>
 
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <span class="error-message">This field is required</span>
+        </div>
+      </fieldset>
+      
+      <div class="form-group">
+        <input type="checkbox" id="consent" name="consent" required>
+        <label for="consent">I consent to being contacted by the team</label>
+        <span class="error-message">To submit this form, please consent to being contacted</span>
+      </div>
 
-  Message
-  This field is required
+      <button type="submit">Submit</button>
+       
+    </form>
 
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
-
-  Submit
-
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
+    <div id="success-message" style="display: none;">
+      <h2>Message Sent!</h2>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
   
-
+  </main>
+ 
 </body>
 </html>
