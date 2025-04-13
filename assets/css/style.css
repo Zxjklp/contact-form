@@ -97,17 +97,14 @@ body {
   background-color: var(--color-green-200);
   font-family: 'Karla', sans-serif;
   font-size: 1rem;
-  padding: 2rem
-}
-
-main {
+  padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
-form {
+main {
   max-width: 736px;
   width: 100%;
   padding: 2rem;
@@ -123,8 +120,6 @@ form {
 fieldset {
   border: none;
   padding: 0;
-  margin: 0;
-  min-width: 0;
 }
 
 legend {
@@ -179,14 +174,24 @@ label {
   padding: 0.5rem;
   border-radius: 4px;
 }
+
 .radio-option input[type='radio'] {
   margin: 0 0.5rem;
-  vertical-align: middle;
-}
-.radio-option label{
-  margin: 0;
+  width: 1rem;
+  height: 1rem;
 }
 
+.radio-option label {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.text-message {
+  border: 1px solid var(--color-grey-500);
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+ 
 .error-message {
   display: none;
 }
