@@ -64,7 +64,6 @@ h6 {
   isolation: isolate;
 }
 
-/* Variable Font Declaration */
 @font-face {
   font-family: 'Karla';
   font-display: swap;
@@ -86,6 +85,7 @@ body {
   background-color: var(--color-green-200);
   font-family: 'Karla', sans-serif;
   font-size: 1rem;
+  font-weight: 400;
   padding: 2rem;
   display: flex;
   justify-content: center;
@@ -135,10 +135,19 @@ body {
 .email,
 .radio-option,
 .message {
-  border: 1px solid var(--color-grey-500);
+  border: 2px solid var(--color-grey-500);
   padding: 0.5rem;
   border-radius: 4px;
   font-size: 1rem;
+}
+
+.first-name:hover,
+.last-name:hover,
+.email:hover,
+.radio-option:hover,
+.message:hover {
+  border-color: var(--color-green-600);
+  cursor: pointer;
 }
 
 .form-group label {
