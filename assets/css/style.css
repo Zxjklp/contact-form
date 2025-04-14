@@ -173,12 +173,55 @@ body {
   display: flex;
   align-items: center;
   flex: 1;
+  position: relative;
+  transition: background-color 0.2s ease;
 }
 
+/* Add selected state styling */
+.radio-option.selected {
+  background-color: var(--color-green-200);
+}
+
+/* Hide default radio button */
 .radio-option .radio-btn {
-  margin: 0 0.5rem;
-  width: 1rem;
-  height: 1rem;
+  opacity: 0;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+/* Custom radio button container */
+.radio-option span {
+  padding-left: 35px;
+  position: relative;
+}
+
+/* Custom radio button - unselected state */
+.radio-option span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-grey-500);
+  border-radius: 50%;
+}
+
+/* Custom radio button - selected state */
+.radio-option .radio-btn:checked+span::before {
+  background-image: url('../images/icon-radio-selected.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
+}
+
+/* Hover style for radio option */
+.radio-option:hover span::before {
+  border-color: var(--color-green-600);
 }
 
 .message {
@@ -186,22 +229,65 @@ body {
   resize: none;
 }
 
-
 .form-group.consent {
-  flex-direction: row;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+/* Consent checkbox container */
+.consent-container {
+  display: flex;
   align-items: center;
+  position: relative;
 }
 
 .form-group.consent label {
   margin: 0;
   cursor: pointer;
+  padding-left: 35px;
 }
 
+/* Hide the default checkbox */
 .form-group.consent .consent-btn {
-  margin-right: 0.9rem;
-  width: 1rem;
-  height: 1rem;
+  opacity: 0;
+  position: absolute;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
+}
+
+/* Custom checkbox - unchecked state */
+.form-group.consent label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-grey-500);
+  border-radius: 4px;
+  background-color: var(--color-white);
+}
+
+/* Custom checkbox - checked state */
+.form-group.consent .consent-btn:checked+label::before {
+  background-image: url('../images/icon-checkbox-check.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
+}
+
+/* Hover state for checkbox */
+.form-group.consent label:hover::before {
+  border-color: var(--color-green-600);
+}
+
+/* Error message for consent checkbox */
+.form-group.consent .error-message {
+  margin-top: 0.5rem;
+  margin-left: 0;
 }
 
 .submit-btn {
@@ -209,9 +295,9 @@ body {
   background-color: var(--color-green-600);
   color: var(--color-white);
   border: none;
-  padding: 0.5rem 1rem;
+  padding: .5rem 1rem;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
@@ -228,14 +314,28 @@ body {
 
 .success-message {
   display: none;
-  background-color: var(--color-green-200);
+  background-color: hsl(169, 95%, 15%);
   padding: 1rem;
   border-radius: 4px;
-  margin-top: 1rem;
-  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.success-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.success-icon {
+  width: 24px;
+  height: 24px;
+  margin-top: 3px;
 }
 
 .success-message h2 {
-  color: var(--color-green-600);
+  color: var(--color-white);
   margin-bottom: 0.5rem;
+}
+.success-message p {
+  color: var(--color-white);
 }

@@ -23,6 +23,20 @@
 <body>
   <main class="container">
     <h1 class="title">Contact Us</h1>
+
+    <div id="success-message"
+      class="success-message">
+      <div class="success-content">
+        <img src="./assets/images/icon-success-check.svg"
+          alt="Success"
+          class="success-icon">
+        <div>
+          <h2>Message Sent!</h2>
+          <p>Thanks for completing the form. We'll be in touch soon!</p>
+        </div>
+      </div>
+    </div>
+
     <form action=""
       method="post"
       id="contact-form"
@@ -79,7 +93,8 @@
           <label>Query Type *</label>
 
           <div class="radio-group">
-            <label class="radio-option" for="general-enquiry">
+            <label class="radio-option"
+              for="general-enquiry">
               <input type="radio"
                 class="radio-btn"
                 id="general-enquiry"
@@ -88,7 +103,8 @@
                 required>
               <span>General Enquiry</span>
             </label>
-            <label class="radio-option" for="support-request">
+            <label class="radio-option"
+              for="support-request">
               <input type="radio"
                 class="radio-btn"
                 id="support-request"
@@ -113,25 +129,21 @@
       </fieldset>
 
       <div class="form-group consent">
-        <input type="checkbox"
-          class="consent-btn"
-          id="consent"
-          name="consent"
-          required>
-        <label for="consent">I consent to being contacted by the team *</label>
+        <div class="consent-container">
+          <input type="checkbox"
+            class="consent-btn"
+            id="consent"
+            name="consent"
+            required>
+          <label for="consent">I consent to being contacted by the team *</label>
+        </div>
         <span class="error-message">To submit this form, please consent to being contacted</span>
       </div>
 
-      <button class="submit-btn" type="submit">Submit</button>
+      <button class="submit-btn"
+        type="submit">Submit</button>
 
     </form>
-
-    <div id="success-message"
-      class="success-message">
-      <h2>Message Sent!</h2>
-      <p>Thanks for completing the form. We'll be in touch soon!</p>
-    </div>
-
   </main>
 
 </body>

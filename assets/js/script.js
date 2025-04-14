@@ -12,6 +12,12 @@ radioOptions.forEach((option) => {
     const radioButton = this.querySelector(".radio-btn");
     radioButton.checked = true;
 
+    // Update selected state for all options
+    radioOptions.forEach((opt) => {
+      opt.classList.remove("selected");
+    });
+    this.classList.add("selected");
+
     // Clear error message when selecting a radio option
     const radioGroup = this.closest(".radio-group");
     if (radioGroup) {
@@ -61,7 +67,11 @@ function clearErrorState(element) {
         });
       }
     } else if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
-      element.style.borderColor = "var(--color-grey-500)";
+      if (element.type === "checkbox") {
+        // For checkbox, we don't need to change any border
+      } else {
+        element.style.borderColor = "var(--color-grey-500)";
+      }
     }
   }
 }
@@ -139,8 +149,13 @@ function validateForm(data) {
   // Check consent
   if (!data["consent"]) {
     const consentField = document.querySelector("#consent");
-    consentField.parentElement.querySelector(".error-message").style.display =
-      "block";
+    const consentFormGroup = consentField.closest(".form-group");
+    if (consentFormGroup) {
+      const errorMessage = consentFormGroup.querySelector(".error-message");
+      if (errorMessage) {
+        errorMessage.style.display = "block";
+      }
+    }
     isValid = false;
   }
 
@@ -176,7 +191,21 @@ form.addEventListener("submit", function (event) {
   if (validateForm(data)) {
     // Simulate a successful form submission
     console.log("Form submitted successfully:", data);
+
+    // Show the success message at the top
     successMessage.style.display = "block";
+
+    // Scroll to top to show success message
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+
+    // Reset the selected state for radio options
+    radioOptions.forEach((opt) => {
+      opt.classList.remove("selected");
+    });
+
     form.reset(); // Reset the form fields
   }
 });
