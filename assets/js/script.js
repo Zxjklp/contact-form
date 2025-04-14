@@ -189,17 +189,11 @@ form.addEventListener("submit", function (event) {
 
   // Validate the form data
   if (validateForm(data)) {
-    // Simulate a successful form submission
-    console.log("Form submitted successfully:", data);
-
-    // Show the success message at the top
+    // Show the success message floating above the form
     successMessage.style.display = "block";
 
-    // Scroll to top to show success message
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    // Ensure the success message is visible
+    successMessage.scrollIntoView({ behavior: "smooth", block: "center" });
 
     // Reset the selected state for radio options
     radioOptions.forEach((opt) => {
