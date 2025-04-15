@@ -21,129 +21,132 @@
 </head>
 
 <body>
-  <main class="container">
-    <h1 class="title">Contact Us</h1>
-
+  <main>
     <div id="success-message"
       class="success-message">
-      <div class="success-content">
+    
+      <div class="success-content-top">
+    
         <img src="./assets/images/icon-success-check.svg"
-          alt="Success"
+          alt=""
           class="success-icon">
-        <div>
-          <h2>Message Sent!</h2>
-          <p>Thanks for completing the form. We'll be in touch soon!</p>
-        </div>
+    
+        <h2>Message Sent!</h2>
       </div>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
     </div>
 
-    <form action=""
-      method="post"
-      id="contact-form"
-      novalidate>
+    <div class="main-content">
 
+      <h1 class="title">Contact Us</h1>
 
-      <fieldset class="contact-form-fieldset">
-        <legend class="contact-form-legend">Personal Information</legend>
-        <div class="name-row">
+      <form action=""
+        method="post"
+        id="contact-form"
+        novalidate>
+
+        <fieldset class="contact-form-fieldset">
+          <legend class="contact-form-legend">Personal Information</legend>
+          <div class="name-row">
+            <div class="form-group">
+              <label for="first-name">First Name *</label>
+              <input type="text"
+                class="first-name"
+                id="first-name"
+                name="first-name"
+                autocomplete="first-name"
+                aria-invalid="true"
+                aria-describedby="error-message"
+                required>
+              <span class="error-message">This field is required</span>
+            </div>
+
+            <div class="form-group">
+              <label for="last-name">Last Name *</label>
+              <input type="text"
+                class="last-name"
+                id="last-name"
+                name="last-name"
+                autocomplete="last-name"
+                aria-invalid="true"
+                aria-describedby="error-message"
+                required>
+              <span class="error-message">This field is required</span>
+            </div>
+          </div>
+
           <div class="form-group">
-            <label for="first-name">First Name *</label>
-            <input type="text"
-              class="first-name"
-              id="first-name"
-              name="first-name"
-              autocomplete="first-name"
+            <label for="email">Email Address *</label>
+            <input type="email"
+              class="email"
+              id="email"
+              name="email"
+              autocomplete="email"
               aria-invalid="true"
               aria-describedby="error-message"
               required>
-            <span class="error-message">This field is required</span>
+            <span class="error-message">Please enter a valid email address</span>
+          </div>
+        </fieldset>
+
+        <fieldset class="contact-form-fieldset">
+          <legend class="contact-form-legend">Your message</legend>
+          <div class="form-group">
+            <label>Query Type *</label>
+
+            <div class="radio-group">
+              <label class="radio-option"
+                for="general-enquiry">
+                <input type="radio"
+                  class="radio-btn"
+                  id="general-enquiry"
+                  name="query-type"
+                  value="general-enquiry"
+                  required>
+                <span>General Enquiry</span>
+              </label>
+              <label class="radio-option"
+                for="support-request">
+                <input type="radio"
+                  class="radio-btn"
+                  id="support-request"
+                  name="query-type"
+                  value="support-request"
+                  required>
+                <span>Support Request</span>
+              </label>
+            </div>
+            <span class="error-message">Please select a query type</span>
           </div>
 
           <div class="form-group">
-            <label for="last-name">Last Name *</label>
-            <input type="text"
-              class="last-name"
-              id="last-name"
-              name="last-name"
-              autocomplete="last-name"
-              aria-invalid="true"
-              aria-describedby="error-message"
-              required>
+            <label for="message">Message *</label>
+            <textarea class="message"
+              id="message"
+              name="message"
+              rows="3"
+              required></textarea>
             <span class="error-message">This field is required</span>
           </div>
-        </div>
+        </fieldset>
 
-        <div class="form-group">
-          <label for="email">Email Address *</label>
-          <input type="email"
-            class="email"
-            id="email"
-            name="email"
-            autocomplete="email"
-            aria-invalid="true"
-            aria-describedby="error-message"
-            required>
-          <span class="error-message">Please enter a valid email address</span>
-        </div>
-      </fieldset>
-
-      <fieldset class="contact-form-fieldset">
-        <legend class="contact-form-legend">Your message</legend>
-        <div class="form-group">
-          <label>Query Type *</label>
-
-          <div class="radio-group">
-            <label class="radio-option"
-              for="general-enquiry">
-              <input type="radio"
-                class="radio-btn"
-                id="general-enquiry"
-                name="query-type"
-                value="general-enquiry"
-                required>
-              <span>General Enquiry</span>
-            </label>
-            <label class="radio-option"
-              for="support-request">
-              <input type="radio"
-                class="radio-btn"
-                id="support-request"
-                name="query-type"
-                value="support-request"
-                required>
-              <span>Support Request</span>
-            </label>
+        <div class="form-group consent">
+          <div class="consent-container">
+            <input type="checkbox"
+              class="consent-btn"
+              id="consent"
+              name="consent"
+              required>
+            <label for="consent">I consent to being contacted by the team *</label>
           </div>
-          <span class="error-message">Please select a query type</span>
+          <span class="error-message">To submit this form, please consent to being contacted</span>
         </div>
 
-        <div class="form-group">
-          <label for="message">Message *</label>
-          <textarea class="message"
-            id="message"
-            name="message"
-            rows="3"
-            required></textarea>
-          <span class="error-message">This field is required</span>
-        </div>
-      </fieldset>
+        <button class="submit-btn"
+          type="submit">Submit</button>
 
-      <div class="form-group consent">
-        <div class="consent-container">
-          <input type="checkbox"
-            class="consent-btn"
-            id="consent"
-            name="consent"
-            required>
-          <label for="consent">I consent to being contacted by the team *</label>
-        </div>
-        <span class="error-message">To submit this form, please consent to being contacted</span>
-      </div>
-
-      <button class="submit-btn"
-        type="submit">Submit</button>
-
-    </form>
+      </form>
+    </div>
   </main>
 
 </body>

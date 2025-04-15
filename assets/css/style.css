@@ -93,14 +93,16 @@ body {
   min-height: 100vh;
 }
 
-.container {
+main {
   max-width: 736px;
   width: 100%;
-  padding: 2rem;
+}
+
+.main-content {
   background-color: var(--color-white);
+  padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  position: relative;
 }
 
 .title {
@@ -225,14 +227,14 @@ body {
   border-color: var(--color-green-600);
 }
 
+/* Add focus styles for keyboard navigation */
+.radio-option .radio-btn:focus-visible+span::before {
+  border-color: var(--color-green-600);
+}
+
 .message {
   min-height: 100px;
   resize: none;
-}
-
-.form-group.consent {
-  flex-direction: column;
-  margin-bottom: 1.5rem;
 }
 
 /* Consent checkbox container */
@@ -268,8 +270,7 @@ body {
   height: 20px;
   border: 2px solid var(--color-grey-500);
   border-radius: 4px;
-  background-color: var(--color-white);
-}
+ }
 
 /* Custom checkbox - checked state */
 .form-group.consent .consent-btn:checked+label::before {
@@ -277,7 +278,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  border: none;
 }
 
 /* Hover state for checkbox */
@@ -285,10 +285,17 @@ body {
   border-color: var(--color-green-600);
 }
 
+/* Focus styles for checkbox keyboard navigation */
+.form-group.consent .consent-btn:focus-visible+label::before {
+  border-color: var(--color-green-600);
+  /* outline: 2px solid var(--color-green-600); */
+  /* outline-offset: 2px; */
+}
+
 /* Error message for consent checkbox */
 .form-group.consent .error-message {
   margin-top: 0.5rem;
-  margin-left: 0;
+  /* margin-left: 0; */
 }
 
 .submit-btn {
@@ -306,6 +313,7 @@ body {
   background-color: hsl(169, 93%, 17%);
 }
 
+/* Error and success message styling for form validation feedback. */
 .error-message {
   display: none;
   color: var(--color-red);
@@ -315,33 +323,31 @@ body {
 
 .success-message {
   display: none;
+  width: 70%;
   background-color: hsl(169, 95%, 15%);
   padding: 1.5rem;
   border-radius: 0.75rem;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70%;
-  z-index: 10;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  margin-inline: auto;
+  margin-bottom: -0.5rem;
+  position: relative;
+  z-index: 10;
 }
 
-.success-content {
+.success-content-top {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .success-icon {
   width: 24px;
   height: 24px;
-  margin-top: 3px;
 }
 
 .success-message h2 {
   color: var(--color-white);
-  margin-bottom: 0.5rem;
 }
 
 .success-message p {
