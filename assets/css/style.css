@@ -98,23 +98,23 @@ main {
   width: 100%;
 }
 
-.main-content {
+.form-container {
   background-color: var(--color-white);
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.title {
+.form-container__title {
   margin-bottom: 1.5rem;
 }
 
-.contact-form-fieldset {
+.form__fieldset {
   border: none;
   padding: 0;
 }
 
-.contact-form-legend {
+.form__legend {
   /* Visually hide while keeping accessible to screen readers */
   position: absolute;
   width: 1px;
@@ -127,52 +127,48 @@ main {
   border: 0;
 }
 
-.form-group {
+.form__group {
   display: flex;
   flex-direction: column;
   margin-bottom: 1.5rem;
 }
 
-.first-name,
-.last-name,
-.email,
-.radio-option,
-.message {
+.form__input,
+.form__radio-option,
+.form__textarea {
   border: 2px solid var(--color-grey-500);
   padding: 0.9rem;
   border-radius: 4px;
   font-size: 1rem;
 }
 
-.first-name:hover,
-.last-name:hover,
-.email:hover,
-.radio-option:hover,
-.message:hover {
+.form__input:hover,
+.form__radio-option:hover,
+.form__textarea:hover {
   border-color: var(--color-green-600);
   cursor: pointer;
 }
 
-.form-group label {
+.form__group label {
   margin-bottom: 0.5rem;
   cursor: pointer;
 }
 
-.name-row {
+.form__name-row {
   display: flex;
   gap: 1rem;
 }
 
-.name-row .form-group {
+.form__name-row .form__group {
   flex: 1;
 }
 
-.radio-group {
+.form__radio-group {
   display: flex;
   gap: 1rem;
 }
 
-.radio-option {
+.form__radio-option {
   display: flex;
   align-items: center;
   flex: 1;
@@ -181,12 +177,12 @@ main {
 }
 
 /* Add selected state styling */
-.radio-option.selected {
+.form__radio-option.selected {
   background-color: var(--color-green-200);
 }
 
 /* Hide default radio button */
-.radio-option .radio-btn {
+.form__radio-option .form__radio-input {
   opacity: 0;
   position: absolute;
   width: 20px;
@@ -195,13 +191,13 @@ main {
 }
 
 /* Custom radio button container */
-.radio-option span {
+.form__radio-option span {
   padding-left: 35px;
   position: relative;
 }
 
 /* Custom radio button - unselected state */
-.radio-option span::before {
+.form__radio-option span::before {
   content: "";
   position: absolute;
   left: 0;
@@ -214,7 +210,7 @@ main {
 }
 
 /* Custom radio button - selected state */
-.radio-option .radio-btn:checked+span::before {
+.form__radio-option .form__radio-input:checked+span::before {
   background-image: url('../images/icon-radio-selected.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -223,35 +219,35 @@ main {
 }
 
 /* Hover style for radio option */
-.radio-option:hover span::before {
+.form__radio-option:hover span::before {
   border-color: var(--color-green-600);
 }
 
 /* Add focus styles for keyboard navigation */
-.radio-option .radio-btn:focus-visible+span::before {
+.form__radio-option .form__radio-input:focus-visible+span::before {
   border-color: var(--color-green-600);
 }
 
-.message {
+.form__textarea {
   min-height: 100px;
   resize: none;
 }
 
 /* Consent checkbox container */
-.consent-container {
+.form__consent-container {
   display: flex;
   align-items: center;
   position: relative;
 }
 
-.form-group.consent label {
+.form__group.consent label {
   margin: 0;
   cursor: pointer;
   padding-left: 35px;
 }
 
 /* Hide the default checkbox */
-.form-group.consent .consent-btn {
+.form__group.consent .form__checkbox {
   opacity: 0;
   position: absolute;
   width: 20px;
@@ -260,7 +256,7 @@ main {
 }
 
 /* Custom checkbox - unchecked state */
-.form-group.consent label::before {
+.form__group.consent label::before {
   content: "";
   position: absolute;
   left: 0;
@@ -273,7 +269,7 @@ main {
  }
 
 /* Custom checkbox - checked state */
-.form-group.consent .consent-btn:checked+label::before {
+.form__group.consent .form__checkbox:checked+label::before {
   background-image: url('../images/icon-checkbox-check.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -281,24 +277,24 @@ main {
 }
 
 /* Hover state for checkbox */
-.form-group.consent label:hover::before {
+.form__group.consent label:hover::before {
   border-color: var(--color-green-600);
 }
 
 /* Focus styles for checkbox keyboard navigation */
-.form-group.consent .consent-btn:focus-visible+label::before {
+.form__group.consent .form__checkbox:focus-visible+label::before {
   border-color: var(--color-green-600);
   /* outline: 2px solid var(--color-green-600); */
   /* outline-offset: 2px; */
 }
 
 /* Error message for consent checkbox */
-.form-group.consent .error-message {
+.form__group.consent .form__error-message {
   margin-top: 0.5rem;
   /* margin-left: 0; */
 }
 
-.submit-btn {
+.form__submit-button {
   width: 100%;
   background-color: var(--color-green-600);
   color: var(--color-white);
@@ -309,12 +305,12 @@ main {
   cursor: pointer;
 }
 
-.submit-btn:hover {
+.form__submit-button:hover {
   background-color: hsl(169, 93%, 17%);
 }
 
 /* Error and success message styling for form validation feedback. */
-.error-message {
+.form__error-message {
   display: none;
   color: var(--color-red);
   font-size: 0.9rem;
@@ -334,22 +330,22 @@ main {
   z-index: 10;
 }
 
-.success-content-top {
+.success-message__header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
-.success-icon {
+.success-message__icon {
   width: 24px;
   height: 24px;
 }
 
-.success-message h2 {
+.success-message__title {
   color: var(--color-white);
 }
 
-.success-message p {
+.success-message__text {
   color: var(--color-white);
 }
