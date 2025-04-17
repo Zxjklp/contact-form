@@ -58,9 +58,9 @@
                 name="first-name"
                 autocomplete="given-name"
                 aria-invalid="true"
-                aria-describedby="form__error-message"
+                aria-describedby="first-name-error"
                 required>
-              <span class="form__error-message">This field is required</span>
+              <span class="form__error-message" id="first-name-error">This field is required</span>
             </div>
 
             <div class="form__group">
@@ -71,9 +71,9 @@
                 name="last-name"
                 autocomplete="family-name"
                 aria-invalid="true"
-                aria-describedby="form__error-message"
+                aria-describedby="last-name-error"
                 required>
-              <span class="form__error-message">This field is required</span>
+              <span class="form__error-message" id="last-name-error">This field is required</span>
             </div>
           </div>
 
@@ -85,9 +85,9 @@
               name="email"
               autocomplete="email"
               aria-invalid="true"
-              aria-describedby="form__error-message"
+              aria-describedby="email-error"
               required>
-            <span class="form__error-message">Please enter a valid email address</span>
+            <span class="form__error-message" id="email-error">Please enter a valid email address</span>
           </div>
         </fieldset>
 
