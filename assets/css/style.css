@@ -266,7 +266,7 @@ main {
   height: 20px;
   border: 2px solid var(--color-grey-500);
   border-radius: 4px;
- }
+}
 
 /* Custom checkbox - checked state */
 .form__group.consent .form__checkbox:checked+label::before {
@@ -348,4 +348,76 @@ main {
 
 .success-message__text {
   color: var(--color-white);
+}
+
+/* Tablet Media Query */
+@media (max-width: 900px) and (min-width: 600px) {
+  .form-container {
+    padding: 1.5rem;
+  }
+
+  /* Make form fields slightly larger for touch targets */
+  .form__input,
+  .form__radio-option,
+  .form__textarea {
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+
+  /* Adjust success message width for tablets */
+  .success-message {
+    width: 85%;
+    padding: 1.25rem;
+  }
+
+  /* Make submit button slightly larger */
+  .form__submit-button {
+    padding: 0.75rem;
+  }
+}
+
+/* Mobile Media Query */
+@media (max-width: 599px) {
+  body {
+    padding: 1rem;
+  }
+
+  .form-container {
+    padding: 1.25rem;
+  }
+
+  /* Stack name fields vertically on mobile */
+  .form__name-row {
+    flex-direction: column;
+    gap: initial; 
+  }
+
+  /* Stack radio options vertically */
+  .form__radio-group {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* Make form fields more touch-friendly */
+  .form__input,
+  .form__radio-option,
+  .form__textarea {
+    padding: 1.1rem;
+  }
+
+  /* Adjust success message for mobile */
+  .success-message {
+    width: 95%;
+    padding: 1.25rem;
+  }
+
+  /* Larger submit button for easier tapping */
+  .form__submit-button {
+    padding: 0.75rem;
+    font-size: 1.3rem;
+  }
+
+  .form__textarea {
+    min-height: 300px;
+  }
 }

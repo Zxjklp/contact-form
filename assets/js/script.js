@@ -176,7 +176,7 @@ form.addEventListener("submit", function (event) {
   });
 
   // Reset all input border colors
-  document
+  document 
     .querySelectorAll("input, textarea, .form__radio-option")
     .forEach((element) => {
       if (element.classList.contains("form__radio-option")) {
