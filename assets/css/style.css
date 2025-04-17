@@ -154,6 +154,10 @@ main {
   cursor: pointer;
 }
 
+.form__query-label {
+  margin-bottom: 0.5rem;
+}
+
 .form__name-row {
   display: flex;
   gap: 1rem;
